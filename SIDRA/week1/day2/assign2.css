@@ -1,0 +1,13 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300&display=swap');
+  #title{
+    font-family: 'Outfit', sans-serif;
+    font-weight: 900;
+  }
+  #para{
+    font-family: 'Outfit', sans-serif;
+    font-weight: 400;
+ }
+ body{
+           background-color: #D3EAFD!important;
+ }

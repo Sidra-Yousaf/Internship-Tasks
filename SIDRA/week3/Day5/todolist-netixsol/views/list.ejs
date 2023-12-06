@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>List-App</title>
+  </head>
+  <body style="background-color:beige;">
+
+    <h1 style="background-color: blueviolet; text-align: center; width: 30%; margin: 0 auto; border-radius: 5px; padding: 5px; color: white; margin-top: 50px;"><%= KindOfDay %></h1>
+    
+    <div class="main" style="border-radius: 5px; background-color: white; width: 30%; margin: 0 auto; margin-top: 50px; padding-top: 15px; padding-bottom: 15px;">
+        <ul>
+            <!-- <li style="margin-top: 25px; list-style: none;"> <span style="margin-right: 15px;">
+                <input type="checkbox">
+            </span>Buy Food</li>
+            <li style="margin-top: 25px; list-style: none;"> <span style="margin-right: 15px;">
+                <input type="checkbox">
+            </span>Buy Food</li> -->
+            <% for (let i = 0; i < newListItems.length; i++) { %>
+                <li style="margin-top: 25px; list-style: none;">
+                  <input type="checkbox" id="checkbox<%= i %>" style="margin-right: 15px;" onchange="toggleTextDecoration(<%= i %>)" />
+                  <label for="checkbox<%= i %>" style="text-decoration: <%= (checkboxChecked[i]) ? 'line-through' : 'none' %>;">
+                    <%= newListItems[i] %>
+                  </label>
+                </li>
+              <% } %>
+              
+              <form action="/" method="post" style="margin-top: 35px; display: flex; justify-content: space-evenly;">
+                <input type="text" name="newItem" autocomplete="off" placeholder="New Item" style="border:0" />
+                <button type="submit" style="background-color: blueviolet; outline: none; border: 0; font-size: 30px; color: white; width: 50px; height: 50px; border-radius: 50%;">+</button>
+              </form>
+
+
+              <script>
+                function toggleTextDecoration(index) {
+                  const checkbox = document.getElementById(`checkbox${index}`);
+                  const label = document.querySelector(`label[for="checkbox${index}"]`);
+              
+                  if (checkbox.checked) {
+                    label.style.textDecoration = 'line-through';
+                    label.style.color = 'purple';
+                  } else {
+                    label.style.textDecoration = 'none';
+                  }
+                }
+              </script>
+
+
+
+
+            
+            <!-- <% for (let i = 0; i < newListItems.length; i++) { %>
+                <li style="margin-top: 25px; list-style: none;">
+                  <input type="checkbox" checked="" style="margin-right: 15px;" />
+                  <span style= "<%= (checkboxChecked) ? 'text-decoration: line-through ;' : '' %>">
+                    <%= newListItems[i] %>
+                  </span>
+                </li>
+              <% } %>
+              
+      
+            <form action="/" method="post" style="margin-top: 35px; display: flex;  justify-content: space-evenly;">
+              <input type="text" name="newItem" autocomplete="off" placeholder="new Item" style="border:0"  />
+              <button type="submit" style="background-color: blueviolet; outline: none; border:0 ; font-size: 30px; color: white; width: 50px; height: 50px; border-radius: 50%;">+
+               
+            </button>
+            </form>
+          </ul> -->
+    </div>
+    ////
+  </body>
+</html>

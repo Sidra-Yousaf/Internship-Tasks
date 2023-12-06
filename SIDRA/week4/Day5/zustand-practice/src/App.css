@@ -1,0 +1,30 @@
+:root{
+       --clrLightGray- : hsl(180, 52%, 96%);
+       --clrLightGray2- : hsl(180, 31%, 95%);
+       --clrLightGray3- : hsl(180, 8%, 52%);
+       --clrLightGray4- : hsl(180, 14%, 20%);
+
+       --fontFamily-: Spartan;
+}
+
+body{
+        font-family: Spartan, sans-serif;
+        font-size: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 70px;
+}
+.container{
+                 display: flex;
+                 flex-wrap: wrap;
+}
+
+.sub-container{
+                  display: flex;
+}
+.sub-sub-container1{  
+                      display: flex;
+
+}
+

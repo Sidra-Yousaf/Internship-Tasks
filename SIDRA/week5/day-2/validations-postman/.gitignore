@@ -1,0 +1,4 @@
+.vercel
+.node_modules
+.pacakge-lock.json
+.pacakage.json

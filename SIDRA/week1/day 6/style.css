@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@500&display=swap");
+* {
+  font-family: "Libre Franklin", sans-serif;
+}
+
+.background {
+  background-image: url("./assets/images/bg-intro-desktop.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: hsl(0, 100%, 74%);
+}
+#btn {
+  background-color: hsl(248, 32%, 49%);
+  font-size: 12px;
+  line-height: 20px;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+#button {
+  background-color: hsl(154, 59%, 51%);
+  font-weight: 200;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+}
+#terms {
+  color: hsl(246, 25%, 77%);
+  font-size: 10px;
+}
+#terms b {
+  color: hsl(0, 100%, 74%);
+}
+#form {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+@media only screen and (max-width: 400px) {
+  h1 {
+    font-size: 20px !important;
+  }
+  p {
+    font-size: 13px !important;
+  }
+}
+.invalid {
+  border-color: red !important;
+}

@@ -1,0 +1,58 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@100&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+}
+main{
+       flex-direction: column;
+       flex: 1 0 auto;
+}
+.img{
+    display: flex;
+         justify-content: center;
+}
+.icons{
+          font-size: 30px;
+        
+}
+#inputPassword2{
+                 border-radius: 25px;
+                outline: none;
+               border-color: none;
+                outline-color: none!important;
+                width: 200px;
+}
+#inputPassword2:hover{
+                       border-color: red;
+}
+#btn{
+         border-radius: 25px;
+         padding: 10px;
+         
+}
+#ico{
+         border: 2px solid ; 
+    
+         padding: 05px;
+         border-radius: 27px;
+}
+
+#ico:hover{
+              color: #0B5ED7;
+}
+@media (max-width: 575px) {
+    #image{
+           width: 70%;
+           height: 70%;
+    }
+    #btn{
+             width: 200px;
+    }
+    }
+  #head{
+    font-family: 'Libre Franklin', sans-serif;
+    font-weight: 600;
+  }
+ 

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Signup Form</title>
+    <!-- Tailwind CSS -->
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Custom js -->
+    <script src="script.js"></script>
+  </head>
+  <body class="background">
+    <div class="flex w-full min-h-screen justify-center items-center">
+      <div
+        class="flex flex-col md:flex-row md:space-x-6 space-y-6 md:space-y-0 w-full max-w-4xl p-8 mt-2 mb-6 text-white bg-transparent"
+      >
+        <div class="flex flex-col space-y-8 justify-center"></div>
+        <!-- Content div -->
+        <div class="md:w-1/2 md:pt-32">
+          <h1
+            class="font-bold md:text-4xl text-3xl md:text-start tracking-wide text-center"
+          >
+            Learn to Code By Watching others
+          </h1>
+          <p class="mt-08 line-height: .75rem; mt-5 md:text-start text-center">
+            See how experienced developers solve problems in real-time. Watching
+            scripted tutorials is great, but understanding how developers think
+            is invaluable. Try it free 7 days then $20/mo.
+          </p>
+        </div>
+
+        <div class="md:w-1/2">
+          <button
+            class="rounded-lg bg-slate-500 inline-block self-center md:self-start text-white px-3 py-3 mt-2 w-full"
+            id="btn"
+          >
+            Try it free 7 days then $20/month.thereafter
+          </button>
+          <!-- Form div -->
+
+          <div
+            class="bg-white rounded-xl drop-shadow hover:drop-shadow-xl p-8 mt-5"
+            id="form"
+          >
+            <form action="flex flex-col space-y-4" id="myForm">
+              <div>
+                <div class="label">
+                  <input
+                    type="text"
+                    placeholder="First Name"
+                    class="ring-1 ring-gray-300 w-full mt-3 rounded-md px-4 py-2 outline-none focus:ring-2 focus:ring-blue-500 text-gray-950"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="label">
+                <div>
+                  <input
+                    type="text"
+                    placeholder="Last Name"
+                    class="ring-1 ring-gray-300 w-full rounded-md mt-3 px-4 py-2 outline-none focus:ring-2 focus:ring-blue-500 text-gray-950"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="label">
+                <div>
+                  <input
+                    type="email"
+                    placeholder="Email"
+                    class="ring-1 ring-gray-300 w-full rounded-md mt-3 px-4 py-2 outline-none focus:ring-2 focus:ring-blue-500 text-gray-950"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="label">
+                <div>
+                  <input
+                    type="password "
+                    placeholder="Password"
+                    class="ring-1 ring-gray-300 w-full rounded-md mt-3 px-4 py-2 outline-none focus:ring-2 focus:ring-blue-500 text-gray-950"
+                    required
+                  />
+                </div>
+              </div>
+              <button
+                class="rounded-lg inline-block self-center text-white px-3 py-3 mt-3 w-full"
+                id="button"
+              >
+                CLAIM YOUR FREE TRAIL
+              </button>
+              <div class="content text-slate-700 mt-3 text-center" id="terms">
+                <p>
+                  By clicking the button,your are agree to our<b
+                    >Terms and Services</b
+                  >
+                </p>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+       const form = document.getElementById("myForm");
+
+form.addEventListener("submit", function(event) {
+  event.preventDefault();
+  validateForm();
+});
+
+function validateForm() {
+  const firstNameInput = form.elements.firstName;
+  const lastNameInput = form.elements.lastName;
+  const emailInput = form.elements.email;
+  const passwordInput = form.elements.password;
+
+  resetValidation();
+
+  if (firstNameInput.value === "") {
+    setInvalidInput(firstNameInput);
+  }
+
+  if (lastNameInput.value === "") {
+    setInvalidInput(lastNameInput);
+  }
+
+  if (emailInput.value === "" || !isValidEmail(emailInput.value)) {
+    setInvalidInput(emailInput);
+  }
+
+  if (passwordInput.value === "") {
+    setInvalidInput(passwordInput);
+  }
+
+  if (form.getElementsByClassName("invalid").length > 0) {
+    return;
+  }
+
+
+  form.submit();
+}
+
+function resetValidation() {
+  const inputs = form.getElementsByTagName("input");
+
+  for (let i = 0; i < inputs.length; i++) {
+    resetInput(inputs[i]);
+  }
+}
+
+function resetInput(input) {
+  input.classList.remove("invalid");
+}
+
+function setInvalidInput(input) {
+  input.classList.add("invalid");
+  inputElement.style.borderColor = "red!important";
+}
+
+function isValidEmail(email) {
+  return email !== "";
+}
+
+
+    </script>
+  </body>
+</html>
